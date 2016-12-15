@@ -30,7 +30,7 @@ namespace GeoCodingTest
             
 
             Console.WriteLine(response.GetResponseStream());
-            using (var sr = new StreamReader(response.GetResponseStream()))
+            using (var sr = new StreamReader(response.GetResponseStream()) )
             {
                 Console.WriteLine(sr.ReadToEnd());
             }
