@@ -17,11 +17,12 @@ namespace GeoCodingTest
         static void Main(string[] args)
         {
             GeoCodingTest.GeoLocation geolocation = GeoCode.GetCoordinates("Port Augusta, South Australia");
-            Console.WriteLine(geolocation.latitude);
+            /*Console.WriteLine(geolocation.latitude);
             Console.WriteLine(geolocation.longitude);
-            Console.WriteLine(geolocation.geocodeurl);
-            GeoCodingTest.MonashCode monashcode = processMonash.GetMonashCode(geolocation.latitude, geolocation.longitude);
-           
+            Console.WriteLine(geolocation.geocodeurl);*/
+            Console.WriteLine( processMonash.GetMonashCode(geolocation.latitude, geolocation.longitude));
+            
+            
             /*
             String uri = "http://maps.googleapis.com/maps/api/geocode/xml?address=1128+West+Hastings+Street,+Vancouver+British+Columbia+Canada&sensor=true";
             WebRequest.DefaultWebProxy = new WebProxy();

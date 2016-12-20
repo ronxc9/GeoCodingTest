@@ -74,7 +74,7 @@ namespace GeoCodingTest
             var response = myWebRequest.GetResponse();
 
             string geoCodeInfo;
-            Console.WriteLine(response.GetResponseStream());
+           // Console.WriteLine(response.GetResponseStream());
             using (var sr = new StreamReader(response.GetResponseStream()))
             {
                 geoCodeInfo = sr.ReadToEnd();
@@ -91,7 +91,7 @@ namespace GeoCodingTest
 
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(geoCodeInfo);
-                Console.WriteLine(xmlDoc);
+                //Console.WriteLine(xmlDoc);
             try
             {
                 //string geoCodeInfo = wc.DownloadString(uri);

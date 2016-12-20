@@ -11,7 +11,7 @@ using System.IO;
 using Newtonsoft.Json;
 namespace GeoCodingTest
 {
-     public interface IMonashCode
+    public interface IMonashCode
     {
        int monashCode { get; set; }
      
@@ -37,24 +37,20 @@ namespace GeoCodingTest
 
     public  class processMonash
     {
-        public static MonashCode GetMonashCode(double latitude, double longitude)
+        public static String GetMonashCode(double latitude, double longitude)
         {
             string uri = "https://www.googleapis.com/fusiontables/v2/query?sql=SELECT%20MMM_CLASS%20FROM%201RqeH2UnuBNkH6yw-kvIotT1i9xlXw8B8XEGsdrpi%20WHERE%20ST_INTERSECTS(geometry,%20CIRCLE(LATLNG(" + latitude + "," + longitude +"),1))&key=AIzaSyB6-WrgN30yZYipBofQHrMwTvyeW2k6RuI";
             WebRequest.DefaultWebProxy = new WebProxy();
             WebRequest myWebRequest = WebRequest.Create(uri);
             var response = myWebRequest.GetResponse();
-
-            string monashInfo;
-            //Console.WriteLine(response.GetResponseStream());
+            string monashInfo;            
             using (var sr = new StreamReader(response.GetResponseStream()))
             {
                 monashInfo = sr.ReadToEnd();
-
-            }
-            Console.WriteLine(monashInfo);
-            //string x = JsonConvert.DeserializeObject<string>(monashInfo);
-            //Console.WriteLine(x);
-            return new MonashCode(1);
+            }        
+            JsonObject jsonboj = JsonConvert.DeserializeObject<JsonObject>(monashInfo);
+            return (jsonboj.rows[0][0]);            
+            
         }
     }
 
