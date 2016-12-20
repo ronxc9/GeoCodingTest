@@ -42,14 +42,22 @@ namespace GeoCodingTest
             string uri = "https://www.googleapis.com/fusiontables/v2/query?sql=SELECT%20MMM_CLASS%20FROM%201RqeH2UnuBNkH6yw-kvIotT1i9xlXw8B8XEGsdrpi%20WHERE%20ST_INTERSECTS(geometry,%20CIRCLE(LATLNG(" + latitude + "," + longitude +"),1))&key=AIzaSyB6-WrgN30yZYipBofQHrMwTvyeW2k6RuI";
             WebRequest.DefaultWebProxy = new WebProxy();
             WebRequest myWebRequest = WebRequest.Create(uri);
-            var response = myWebRequest.GetResponse();
-            string monashInfo;            
-            using (var sr = new StreamReader(response.GetResponseStream()))
+            try
             {
-                monashInfo = sr.ReadToEnd();
-            }        
-            JsonObject jsonboj = JsonConvert.DeserializeObject<JsonObject>(monashInfo);
-            return (jsonboj.rows[0][0]);            
+                var response = myWebRequest.GetResponse();
+                string monashInfo;
+                using (var sr = new StreamReader(response.GetResponseStream()))
+                {
+                    monashInfo = sr.ReadToEnd();
+                }
+                JsonObject jsonboj = JsonConvert.DeserializeObject<JsonObject>(monashInfo);
+                Console.WriteLine(monashInfo);
+                return (jsonboj.rows[0][0]);
+            }
+            catch
+            {
+                return ("Invalid address");
+            }   
             
         }
     }

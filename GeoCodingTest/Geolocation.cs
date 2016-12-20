@@ -71,29 +71,20 @@ namespace GeoCodingTest
             Uri uri = GetGeoCodeURI(address);
             WebRequest.DefaultWebProxy = new WebProxy();
             WebRequest myWebRequest = WebRequest.Create(uri);
-            var response = myWebRequest.GetResponse();
-
-            string geoCodeInfo;
-           // Console.WriteLine(response.GetResponseStream());
-            using (var sr = new StreamReader(response.GetResponseStream()))
-            {
-                geoCodeInfo = sr.ReadToEnd();
-                
-            }
-
-            //Console.WriteLine(geoCodeInfo);
-         
-
-   
+          
             
-            
-            
-
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.LoadXml(geoCodeInfo);
-                //Console.WriteLine(xmlDoc);
             try
             {
+                XmlDocument xmlDoc = new XmlDocument();
+                var response = myWebRequest.GetResponse();
+
+                string geoCodeInfo;
+                // Console.WriteLine(response.GetResponseStream());
+                using (var sr = new StreamReader(response.GetResponseStream()))
+                {
+                    geoCodeInfo = sr.ReadToEnd();
+
+                }
                 //string geoCodeInfo = wc.DownloadString(uri);
                 //XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(geoCodeInfo);

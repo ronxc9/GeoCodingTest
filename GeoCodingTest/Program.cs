@@ -16,10 +16,10 @@ namespace GeoCodingTest
     {
         static void Main(string[] args)
         {
-            GeoCodingTest.GeoLocation geolocation = GeoCode.GetCoordinates("Port Augusta, South Australia");
-            /*Console.WriteLine(geolocation.latitude);
+            GeoCodingTest.GeoLocation geolocation = GeoCode.GetCoordinates("xx");
+            Console.WriteLine(geolocation.latitude);
             Console.WriteLine(geolocation.longitude);
-            Console.WriteLine(geolocation.geocodeurl);*/
+            Console.WriteLine(geolocation.geocodeurl);
             Console.WriteLine( processMonash.GetMonashCode(geolocation.latitude, geolocation.longitude));
             
             
