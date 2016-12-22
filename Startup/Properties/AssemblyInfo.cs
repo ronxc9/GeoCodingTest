@@ -5,16 +5,14 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GeoCodingTest")]
+[assembly: AssemblyTitle("Startup")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Resthaven Incorporated")]
-[assembly: AssemblyProduct("GeoCodingTest")]
+[assembly: AssemblyProduct("Startup")]
 [assembly: AssemblyCopyright("Copyright © Resthaven Incorporated 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly:AssemblyKeyFile("C:\\Users\\ron.rosario\\Documents\\Visual Studio 2012\\Projects\\GeoCodingTest\\GeoCodingTest\\bin\\Debug\\GeocodingTest.snk")]
-
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -22,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c5dc0333-5df3-4d05-8511-02b99d320165")]
+[assembly: Guid("9dbf758c-f584-4479-adb5-418258f84073")]
 
 // Version information for an assembly consists of the following four values:
 //
